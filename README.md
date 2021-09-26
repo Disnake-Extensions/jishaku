@@ -31,7 +31,7 @@ a debugging and utility extension for disnake bots
 >
 > As of the 27th of August 2021, [discord has ceased development](https://gist.github.com/Rapptz/4a2f62751b9600a31a0d3c78100287f1).
 >
-> Jishaku will continue to be maintained targeting both the PyPI version and the [latest git revision](https://github.com/Rapptz/disnake/tree/45d498c1b76deaf3b394d17ccf56112fa691d160) as of the archive, until at least the date of the slash command mandate (currently speculated to be around April 2022).
+> Jishaku will continue to be maintained targeting both the PyPI version and the [latest git revision](https://github.com/Rapptz/discord/tree/45d498c1b76deaf3b394d17ccf56112fa691d160) as of the archive, until at least the date of the slash command mandate (currently speculated to be around April 2022).
 >
 > As all trusted contributors have rejected continuing the library, I do not have enough trust in any forks to target those instead. The existing forks are handled by inexperienced developers, and I figure this will continue to be the case in the future, as all of the developers experienced enough to carry the torch do not want to maintain the library for similar reasons to Danny himself.
 >
@@ -103,25 +103,25 @@ You can also import the module to use the command development utilities.
                 <tr>
                     <td><code>_ctx</code></td>
                     <td>
-                        The <a href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Context">Context</a> that invoked the command.
+                        The <a href="https://disnake.readthedocs.io/en/latest/ext/commands/api.html#disnake.ext.commands.Context">Context</a> that invoked the command.
                     </td>
                 </tr>
                 <tr>
                     <td><code>_bot</code></td>
                     <td>
-                        The running <a href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Bot">Bot</a> instance.
+                        The running <a href="https://disnake.readthedocs.io/en/latest/ext/commands/api.html#disnake.ext.commands.Bot">Bot</a> instance.
                     </td>
                 </tr>
                 <tr>
                     <td><code>_author</code><br><code>_channel</code><br><code>_guild</code><br><code>_message</code><br><code>_msg</code></td>
                     <td>
-                        Shortcuts for attributes on <a href="https://discordpy.readthedocs.io/en/latest/ext/commands/api.html#discord.ext.commands.Context"><code>_ctx</code></a>.
+                        Shortcuts for attributes on <a href="https://disnake.readthedocs.io/en/latest/ext/commands/api.html#disnake.ext.commands.Context"><code>_ctx</code></a>.
                     </td>
                 </tr>
                 <tr>
                     <td><code>_find</code><br><code>_get</code></td>
                     <td>
-                        Shortcuts for <a href="https://discordpy.readthedocs.io/en/latest/api.html#utility-functions"><code>discord.utils</code></a> functions.
+                        Shortcuts for <a href="https://disnake.readthedocs.io/en/latest/api.html#utility-functions"><code>disnake.utils</code></a> functions.
                     </td>
                 </tr>
             </table>
