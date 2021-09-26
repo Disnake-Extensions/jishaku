@@ -22,7 +22,7 @@ from jishaku.repl.inspections import all_inspections
     "target",
     [
         4,
-        discord.Client,  # cover type subclasses
+        disnake.Client,  # cover type subclasses
         tuple,  # cover many-subclass truncation
         [False, 1, "2", 3.0],  # cover content types
         collections.Counter,  # cover inplace operators

@@ -142,7 +142,7 @@ class PaginatorInterface:  # pylint: disable=too-many-instance-attributes
         """
         A property that returns the kwargs forwarded to send/edit when updating the page.
 
-        As this must be compatible with both `discord.TextChannel.send` and `discord.Message.edit`,
+        As this must be compatible with both `disnake.TextChannel.send` and `disnake.Message.edit`,
         it should be a dict containing 'content', 'embed' or both.
         """
 
@@ -171,7 +171,7 @@ class PaginatorInterface:  # pylint: disable=too-many-instance-attributes
         # Unconditionally set send lock to try and guarantee page updates on unfocused pages
         self.send_lock.set()
 
-    async def send_to(self, destination: discord.abc.Messageable):
+    async def send_to(self, destination: disnake.abc.Messageable):
         """
         Sends a message to the given destination with this interface.
 
@@ -206,7 +206,7 @@ class PaginatorInterface:  # pylint: disable=too-many-instance-attributes
         for emoji in filter(None, self.emojis):
             try:
                 await self.message.add_reaction(emoji)
-            except discord.NotFound:
+            except disnake.NotFound:
                 # the paginator has probably already been closed
                 break
         self.sent_page_reactions = True
@@ -239,7 +239,7 @@ class PaginatorInterface:  # pylint: disable=too-many-instance-attributes
 
         start, back, forward, end, close = self.emojis
 
-        def check(payload: discord.RawReactionActionEvent):
+        def check(payload: disnake.RawReactionActionEvent):
             """
             Checks if this reaction is related to the paginator interface.
             """
@@ -247,7 +247,7 @@ class PaginatorInterface:  # pylint: disable=too-many-instance-attributes
             owner_check = not self.owner or payload.user_id == self.owner.id
 
             emoji = payload.emoji
-            if isinstance(emoji, discord.PartialEmoji) and emoji.is_unicode_emoji():
+            if isinstance(emoji, disnake.PartialEmoji) and emoji.is_unicode_emoji():
                 emoji = emoji.name
 
             tests = (
@@ -281,9 +281,9 @@ class PaginatorInterface:  # pylint: disable=too-many-instance-attributes
                     task_list.remove(task)
                     payload = task.result()
 
-                    if isinstance(payload, discord.RawReactionActionEvent):
+                    if isinstance(payload, disnake.RawReactionActionEvent):
                         emoji = payload.emoji
-                        if isinstance(emoji, discord.PartialEmoji) and emoji.is_unicode_emoji():
+                        if isinstance(emoji, disnake.PartialEmoji) and emoji.is_unicode_emoji():
                             emoji = emoji.name
 
                         if emoji == close:
@@ -318,7 +318,7 @@ class PaginatorInterface:  # pylint: disable=too-many-instance-attributes
                 if self.send_kwargs != last_kwargs:
                     try:
                         await self.message.edit(**self.send_kwargs)
-                    except discord.NotFound:
+                    except disnake.NotFound:
                         # something terrible has happened
                         return
 
@@ -337,7 +337,7 @@ class PaginatorInterface:  # pylint: disable=too-many-instance-attributes
             for emoji in filter(None, self.emojis):
                 try:
                     await self.message.remove_reaction(emoji, self.bot.user)
-                except (discord.Forbidden, discord.NotFound):
+                except (disnake.Forbidden, disnake.NotFound):
                     pass
 
         finally:
@@ -351,7 +351,7 @@ class PaginatorEmbedInterface(PaginatorInterface):
     """
 
     def __init__(self, *args, **kwargs):
-        self._embed = kwargs.pop('embed', None) or discord.Embed()
+        self._embed = kwargs.pop('embed', None) or disnake.Embed()
         super().__init__(*args, **kwargs)
 
     @property

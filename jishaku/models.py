@@ -23,7 +23,7 @@ async def copy_context_with(ctx: commands.Context, *, author=None, channel=None,
     """
 
     # copy the message and update the attributes
-    alt_message: discord.Message = copy.copy(ctx.message)
+    alt_message: disnake.Message = copy.copy(ctx.message)
     alt_message._update(kwargs)  # pylint: disable=protected-access
 
     if author is not None:

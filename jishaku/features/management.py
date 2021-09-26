@@ -114,7 +114,7 @@ class ManagementFeature(Feature):
         """
 
         scopes = ('bot', 'applications.commands')
-        permissions = discord.Permissions()
+        permissions = disnake.Permissions()
 
         for perm in perms:
             if perm not in dict(permissions):
@@ -131,7 +131,7 @@ class ManagementFeature(Feature):
         }
 
         return await ctx.send(
-            f"Link to invite this bot:\n<https://discordapp.com/oauth2/authorize?{urlencode(query, safe='+')}>"
+            f"Link to invite this bot:\n<https://disnakeapp.com/oauth2/authorize?{urlencode(query, safe='+')}>"
         )
 
     @Feature.Command(parent="jsk", name="rtt", aliases=["ping"])
