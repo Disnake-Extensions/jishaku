@@ -7,7 +7,7 @@
 [![Commit activity](https://img.shields.io/github/commit-activity/w/Gorialis/jishaku.svg)](https://github.com/Disnake-Extensions/jishaku/commits)
 
 ***
-### **WARNING:- This is just a fork of Jishaku so that it is compatible with disnake. Credits go to Gorialis for making this module. No feature add PRs/requests would be entertained.**
+### **WARNING:- This is just a fork of Jishaku so that it is compatible with disnake. Credits go to Gorialis for making this module. No feature add requests would be entertained.**
 <h1 align="center">
 <sub>
     <img src=".github/assets/jishaku_logo.svg" height="36">
